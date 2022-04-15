@@ -1,0 +1,31 @@
+{
+  "name": "proshop",
+  "version": "1.0.0",
+  "description": "MERN E commerce app",
+  "main": "server.js",
+  "type":"module",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmitabhKale/proshop.git"
+  },
+  "author": "Amitabh Kale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmitabhKale/proshop/issues"
+  },
+  "homepage": "https://github.com/AmitabhKale/proshop#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0",
+    "nodemon": "^2.0.15"
+  }
+}
