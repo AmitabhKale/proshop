@@ -64,7 +64,7 @@ const [product,setProduct] = useState([]);
                   Status:
                 </Col>
                 <Col>
-                  <strong>${product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}</strong>
+                  <strong>{product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}</strong>
                 </Col>
               </Row>
             </ListGroup.Item>
