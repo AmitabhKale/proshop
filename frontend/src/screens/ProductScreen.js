@@ -8,7 +8,7 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 
 const ProductScreen = () => {
-  const [qty, setQty] = useState(0)
+  const [qty, setQty] = useState(1)
 
 const history = useNavigate();
 let params = useParams();
@@ -83,7 +83,7 @@ const productDetails = useSelector((state) => state.productDetails)
                     <Row>
                       <Col>Qty:</Col>
                       <Col>
-                         <Form.Group
+                         <Form.Control
                           as='select'
                           value={qty}
                           onChange={(e) => setQty(e.target.value)}
@@ -94,7 +94,7 @@ const productDetails = useSelector((state) => state.productDetails)
                               {x + 1}
                             </option>
                           ))}
-                        </Form.Group>
+                        </Form.Control>
                       </Col>
                     </Row>
                  </ListGroup.Item>
