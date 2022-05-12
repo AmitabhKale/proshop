@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
+import {useNavigate} from 'react-router-dom';
 import { Table, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import { listUsers } from '../actions/userActions'
+import { listUsers, deleteUser } from '../actions/userActions'
 
 const UserListScreen = () => {
   const dispatch = useDispatch()
@@ -12,12 +13,26 @@ const UserListScreen = () => {
   const userList = useSelector((state) => state.userList)
   const { loading, error, users } = userList
 
+  const userDelete = useSelector((state) => state.userDelete)
+  const { success: successDelete } = userDelete
+
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
+
+  const history = useNavigate()
+
   useEffect(() => {
-    dispatch(listUsers())
-  }, [dispatch])
+    if (userInfo && userInfo.isAdmin) {
+      dispatch(listUsers())
+    } else {
+      history('/login')
+    }
+    // eslint-disable-next-line
+  }, [dispatch, history, successDelete])
 
   const deleteHandler = (id) => {
-    console.log('delete')
+    if(window.confirm('Are you Sure?'))
+    dispatch(deleteUser(id))
   }
 
   return (
