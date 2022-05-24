@@ -82,7 +82,7 @@ export const listProductDetails = (id) => async (dispatch) => {
 
       const {
         userLogin: { userInfo }
-      } = getState
+      } = getState()
 
       const config = {
         headers: {
