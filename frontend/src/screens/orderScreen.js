@@ -41,7 +41,7 @@ const OrderScreen = () => {
       dispatch({ type: ORDER_DELIVER_RESET })
       dispatch(getOrderDetails(orderId));
     }
-  }, [dispatch, orderId, successDeliver]);
+  }, [dispatch, orderId, successDeliver,order]);
 
 
   const deliverHandler = () => {

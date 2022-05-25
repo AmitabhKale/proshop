@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { createProduct, deleteProduct, listProducts } from "../actions/productActions";
-import { PRODUCT_CREATE_REQUEST } from "../constants/productConstants";
+// import { PRODUCT_CREATE_REQUEST } from "../constants/productConstants";
 
 const ProductListScreen = () => {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ const ProductListScreen = () => {
   const history = useNavigate();
 
   useEffect(() => {
-    dispatch({ type: PRODUCT_CREATE_REQUEST })
+    // dispatch({ type: PRODUCT_CREATE_REQUEST })
 
     if(!userInfo.isAdmin){
       history('/login')
